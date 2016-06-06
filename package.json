@@ -1,0 +1,14 @@
+{
+  "name": "balm-php",
+  "version": "1.0.0",
+  "description": "The balm demo for php project",
+  "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "prod": "gulp --production"
+  },
+  "devDependencies": {
+    "balm": "^0.2.4",
+    "gulp": "^3.9.1"
+  }
+}

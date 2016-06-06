@@ -1,0 +1,50 @@
+@import '../global/index';
+
+@import '../components/navigation';
+@import '../components/hero';
+@import '../components/cards';
+@import '../components/footer';
+
+@import '../sprites/icon';
+
+body {
+  color: red;
+}
+
+.hero {
+  background: url(getImgUrl('unicorn.png')) no-repeat;
+}
+
+.icon-list {
+  .icon {
+    display: inline-block;
+    @if $debug {
+      background: none no-repeat center;
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  @if $debug {
+    .icon-performance {
+      background-image: url(getImgUrl('icon/performance.png'));
+    }
+    .icon-semantics {
+      background-image: url(getImgUrl('icon/semantics.png'));
+    }
+    .icon-styling {
+      background-image: url(getImgUrl('icon/styling.png'));
+    }
+  } @else {
+    // .icon-performance {
+    //   @include sprite($icon-performance);
+    // }
+    // .icon-semantics {
+    //   @include sprite($icon-semantics);
+    // }
+    // .icon-styling {
+    //   @include sprite($icon-styling);
+    // }
+    @include sprites($icon-spritesheet-sprites);
+  }
+}
