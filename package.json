@@ -4,9 +4,21 @@
   "description": "The balm demo for php project",
   "private": true,
   "scripts": {
+    "preinstall": "bower install",
     "dev": "gulp",
     "prod": "gulp --production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balmjs/balm-php.git"
+  },
+  "keywords": [],
+  "author": "Elf-mousE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balmjs/balm-php/issues"
+  },
+  "homepage": "https://github.com/balmjs/balm-php#readme",
   "devDependencies": {
     "balm": "^0.2.4",
     "gulp": "^3.9.1"
