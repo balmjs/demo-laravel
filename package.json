@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/balmjs/balm-php#readme",
   "devDependencies": {
-    "balm": "^0.2.4",
+    "balm": "^0.3.0",
     "gulp": "^3.9.1"
   }
 }

@@ -5,11 +5,11 @@ balm.config = {
     proxy: 'project.local'
   },
   roots: {
-    app: 'resources',
-    dist: 'public'
+    source: 'resources',
+    target: 'public'
   },
   paths: {
-    app: {
+    source: {
       html: '/views',
       css: '/assets/sass',
       js: '/assets/js',
