@@ -150,9 +150,9 @@
     </div>
   </footer>
 
-  <script src="//code.jquery.com/jquery-1.12.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.12.3.min.js"><\/script>')
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')
   </script>
 
   <script src="js/home/index.js"></script>
