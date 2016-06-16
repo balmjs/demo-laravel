@@ -10,10 +10,14 @@ balm.config = {
   },
   paths: {
     source: {
-      html: '/views',
-      css: '/assets/sass',
-      js: '/assets/js',
-      img: '/assets/img'
+      html: 'views',
+      css: 'assets/sass',
+      js: 'assets/js',
+      img: 'assets/img'
+    },
+    tmp: {
+      base: 'assets', // fix static file path
+      css: 'assets/css'
     }
   },
   scripts: {
