@@ -2,6 +2,7 @@
 
 ```sh
 # 安装
+composer install
 npm install
 
 # 开发

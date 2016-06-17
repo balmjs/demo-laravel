@@ -5,15 +5,15 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>balm-php</title>
+  <title>balm-laravel</title>
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/home/index.css">
+  <link rel="stylesheet" href="{{ balm('css/home/index.css') }}">
 
   <!--[if lt IE 9]>
-  <link rel="stylesheet" href="css/ie.css">
+  <link rel="stylesheet" href="{{ balm('css/ie.css') }}">
   <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
@@ -155,7 +155,7 @@
     window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')
   </script>
 
-  <script src="js/home/index.js"></script>
+  <script src="{{ balm('js/home/index.js') }}"></script>
 </body>
 
 </html>
