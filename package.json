@@ -1,7 +1,7 @@
 {
-  "name": "balm-php",
+  "name": "balm-laravel",
   "version": "1.0.0",
-  "description": "The balm demo for php project",
+  "description": "The balm demo for laravel project",
   "private": true,
   "scripts": {
     "preinstall": "bower install",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/balmjs/balm-php.git"
+    "url": "git+https://github.com/balmjs/balm-laravel.git"
   },
   "keywords": [],
   "author": "Elf-mousE",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/balmjs/balm-php/issues"
+    "url": "https://github.com/balmjs/balm-laravel/issues"
   },
-  "homepage": "https://github.com/balmjs/balm-php#readme",
+  "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "devDependencies": {
     "balm": "^0.3.0-beta3",
     "gulp": "^3.9.1"

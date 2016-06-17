@@ -1,6 +1,7 @@
 var balm = require('balm');
 
 balm.config = {
+  // cache: true,
   server: {
     proxy: 'project.local'
   },
@@ -19,6 +20,9 @@ balm.config = {
       base: 'assets', // fix static file path
       css: 'assets/css'
     }
+    // target: {
+    //   build: 'assets' // build cache dir
+    // }
   },
   scripts: {
     entry: {
