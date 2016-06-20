@@ -1,8 +1,12 @@
 ## Balm Demo（Laravel版）
 
 ```sh
-# 安装
+## 准备
 composer install
+cp .env.example .env
+php artisan key:generate
+
+# 安装
 npm install
 
 # 开发
