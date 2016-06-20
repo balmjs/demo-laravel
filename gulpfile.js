@@ -3,7 +3,7 @@ var balm = require('balm');
 balm.config = {
   // cache: true,
   server: {
-    proxy: 'project.local'
+    proxy: 'project.local' // change to yours
   },
   roots: {
     source: 'resources',
