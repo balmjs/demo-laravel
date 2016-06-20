@@ -20,8 +20,8 @@ balm.config = {
       base: 'assets', // fix static file path
       css: 'assets/css'
     }
-    // target: {
-    //   build: 'assets' // build cache dir
+    //, target: {
+    //   cache: 'assets' // build cache dir
     // }
   },
   scripts: {
