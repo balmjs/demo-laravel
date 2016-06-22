@@ -2,9 +2,7 @@ var balm = require('balm');
 
 balm.config = {
   // cache: true,
-  server: {
-    proxy: 'project.local' // change to yours
-  },
+  proxy: 'your.project.local',
   roots: {
     source: 'resources',
     target: 'public'
@@ -31,7 +29,8 @@ balm.config = {
     }
   },
   sprites: {
-    basePath: '../..'
+    basePath: '../..',
+    imgList: ['icon']
   }
 };
 
