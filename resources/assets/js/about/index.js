@@ -1,8 +1,6 @@
-import {
-  DEBUG
-} from '../config/global';
+import { DEBUG } from '../config/global';
 import '../components/navigation';
-// import $ from 'jquery';
+import $ from 'jquery';
 
 if (DEBUG) {
   console.log('about');

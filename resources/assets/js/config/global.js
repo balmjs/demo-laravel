@@ -1,5 +1,5 @@
 const DEBUG = true;
-const HOST = DEBUG ? 'localhost:9001' : '10.21.202.214:9001';
+const HOST = DEBUG ? 'localhost:3000' : '192.168.1.1:3000';
 
 export {
   DEBUG,

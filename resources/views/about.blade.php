@@ -10,10 +10,10 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/about/index.css">
+  <link rel="stylesheet" href="{{ balm('css/about/index.css') }}">
 
   <!--[if lt IE 9]>
-  <link rel="stylesheet" href="css/ie.css">
+  <link rel="stylesheet" href="{{ balm('css/ie.css') }}">
   <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
@@ -107,12 +107,8 @@
     </div>
   </div>
 
-  <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')
-  </script>
-
-  <script src="js/about/index.js"></script>
+  <script src="{{ balm('js/vendor/common.js') }}"></script>
+  <script src="{{ balm('js/about/index.js') }}"></script>
 </body>
 
 </html>

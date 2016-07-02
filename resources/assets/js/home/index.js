@@ -1,6 +1,4 @@
-import {
-  DEBUG
-} from '../config/global';
+import { DEBUG } from '../config/global';
 import '../components/navigation';
 
 if (DEBUG) {

@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 
 $(window).resize(function() {
   var more = document.getElementById('js-navigation-more');

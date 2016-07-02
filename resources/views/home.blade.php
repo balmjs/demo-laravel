@@ -150,11 +150,7 @@
     </div>
   </footer>
 
-  <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')
-  </script>
-
+  <script src="{{ balm('js/vendor/common.js') }}"></script>
   <script src="{{ balm('js/home/index.js') }}"></script>
 </body>
 

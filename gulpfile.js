@@ -21,9 +21,11 @@ balm.config = {
   },
   scripts: {
     entry: {
+      'common' : ['jquery'],
       'home/index': './resources/assets/js/home/index.js',
       'about/index': './resources/assets/js/about/index.js'
-    }
+    },
+    vendors: ['common']
   },
   sprites: {
     basePath: '../..',
