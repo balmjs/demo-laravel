@@ -28,7 +28,7 @@ balm.config = {
     vendors: ['common']
   },
   sprites: {
-    basePath: '../..',
+    basePath: '../../',
     imgList: ['icon']
   }
 };
