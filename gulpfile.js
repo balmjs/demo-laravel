@@ -29,7 +29,7 @@ balm.config = {
   },
   sprites: {
     basePath: '../../',
-    imgList: ['icon']
+    image: ['icon']
   }
 };
 

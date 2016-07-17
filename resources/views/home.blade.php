@@ -73,7 +73,7 @@
       <ul class="icon-list">
         <li class="icon icon-3d_effects"></li>
         <li class="icon icon-connectivity"></li>
-        <li class="icon icon-access"></li>
+        <li class="icon icon-device_access"></li>
         <li class="icon icon-multimedia"></li>
         <li class="icon icon-offline_storage"></li>
         <li class="icon icon-performance"></li>
