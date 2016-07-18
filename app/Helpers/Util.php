@@ -11,7 +11,7 @@ class Util
      */
     public static function assets($filename, $buildDirectory = 'assets')
     {
-        $manifestPath = public_path($buildDirectory.'/rev-manifest.json');
+        $manifestPath = public_path($buildDirectory.'/manifest.json');
 
         if (file_exists($manifestPath)) {
             $manifest = json_decode(file_get_contents($manifestPath), TRUE);
