@@ -1,7 +1,6 @@
 var balm = require('balm');
 
 balm.config = {
-  // cache: true,
   proxy: 'your.project.local',
   roots: {
     source: 'resources',
@@ -19,9 +18,12 @@ balm.config = {
     //   cache: 'assets' // build cache dir
     // }
   },
+  styles: {
+    ext: 'scss'
+  },
   scripts: {
     entry: {
-      'common' : ['jquery'],
+      'common': ['jquery'],
       'home/index': './resources/assets/js/home/index.js',
       'about/index': './resources/assets/js/about/index.js'
     },
@@ -30,7 +32,10 @@ balm.config = {
   sprites: {
     basePath: '../../',
     image: ['icon']
-  }
+  },
+  // cache: {
+  //   enabled: true
+  // }
 };
 
 balm.go();
