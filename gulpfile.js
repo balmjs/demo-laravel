@@ -1,7 +1,9 @@
 var balm = require('balm');
 
 balm.config = {
-  proxy: 'your.project.local',
+  server: {
+    proxy: 'your.project.local'
+  },
   roots: {
     source: 'resources',
     target: 'public'
