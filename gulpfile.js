@@ -1,6 +1,7 @@
 var balm = require('balm');
 
 balm.config = {
+  static: false,
   server: {
     proxy: 'your.project.local'
   },
