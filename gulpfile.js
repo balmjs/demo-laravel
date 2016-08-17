@@ -16,10 +16,7 @@ balm.config = {
       css: 'assets/sass',
       js: 'assets/js',
       img: 'assets/img'
-    },
-    // target: {
-    //   cache: 'assets' // build cache dir
-    // }
+    }
   },
   styles: {
     ext: 'scss'
@@ -36,9 +33,14 @@ balm.config = {
     basePath: '../../',
     image: ['icon']
   },
-  // cache: {
-  //   enabled: true
+  // cache: true,
+  // assets: {
+  //   subDir: 'assets'
   // }
 };
 
-balm.go();
+balm.go(function(mix) {
+  if (balm.config.production) {
+    // mix.remove('./public/css');
+  }
+});
