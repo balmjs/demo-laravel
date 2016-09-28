@@ -4,9 +4,8 @@
   "description": "The balm demo for laravel project",
   "private": true,
   "scripts": {
-    "preinstall": "bower install",
-    "dev": "gulp",
-    "prod": "gulp --production"
+    "prod": "gulp --production",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,19 @@
   },
   "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "devDependencies": {
-    "balm": "^0.4.37",
-    "gulp": "^3.9.1"
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "balm": "^0.5.0-beta.6",
+    "gulp": "^3.9.1",
+    "vue-hot-reload-api": "^1.2.0",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "^8.5.4",
+    "vue-style-loader": "^1.0.0"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.1.0",
+    "lodash": "^4.14.0",
+    "vue": "^1.0.26",
+    "vue-resource": "^0.9.3"
   }
 }

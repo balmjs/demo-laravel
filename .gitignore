@@ -1,9 +1,7 @@
-/vendor
 /node_modules
-/bower_components
 /public/storage
-Homestead.yaml
+/vendor
+/.idea
 Homestead.json
+Homestead.yaml
 .env
-.tmp
-resources/assets/sass/sprites

@@ -1,9 +1,9 @@
-var balm = require('balm');
+let balm = require('balm');
 
 balm.config = {
-  static: false,
+  static: false, // for PHP framework
   server: {
-    proxy: 'your.project.local'
+    proxy: 'your.project.dev'
   },
   roots: {
     source: 'resources',
@@ -14,8 +14,7 @@ balm.config = {
       base: 'assets',
       html: 'views',
       css: 'assets/sass',
-      js: 'assets/js',
-      img: 'assets/img'
+      js: 'assets/js'
     }
   },
   styles: {
@@ -23,24 +22,21 @@ balm.config = {
   },
   scripts: {
     entry: {
-      'common': ['jquery'],
-      'home/index': './resources/assets/js/home/index.js',
-      'about/index': './resources/assets/js/about/index.js'
+      app: './resources/assets/js/app.js',
     },
-    vendors: ['common']
-  },
-  sprites: {
-    basePath: '../../',
-    image: ['icon']
-  },
-  // cache: true,
+    loaders: [{ // for Vue.js
+      test: /\.vue$/,
+      loader: 'vue'
+    }]
+  }
+  //, cache: true,
   // assets: {
-  //   subDir: 'assets'
+  //  subDir: 'assets'
   // }
 };
 
-balm.go(function(mix) {
-  if (balm.config.production) {
-    // mix.remove('./public/css');
+balm.go(mix => {
+  if (balm.config.production && balm.config.cache) {
+    mix.remove('./public/css');
   }
 });
