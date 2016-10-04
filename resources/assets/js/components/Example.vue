@@ -1,29 +1,29 @@
 <template>
     <div class="container">
         <p>
-            <button @click="addItem()">Add</button>
-            <button @click="getItems()">Select (watch your `console`)</button>
+            <button @click="addUser()">Add</button>
+            <button @click="getUsers()">Select (watch your `console`)</button>
         </p>
-        <div class="row" v-for="item in items">
+        <div class="row" v-for="user in users">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default" v-if="item.isEdit">
-                    <div class="panel-heading"><input type="text" v-model="item.title"></div>
+                <div class="panel panel-default" v-if="user.isEdit">
+                    <div class="panel-heading"><input type="text" v-model="user.name"></div>
                     <div class="panel-body">
-                        <textarea v-model="item.content"></textarea>
+                        <textarea v-model="user.email"></textarea>
                     </div>
                     <hr>
                     <p>
-                        <button @click="updateItem($index)">Update</button>
-                        <button @click="delItem($index)">Delete</button>
+                        <button @click="updateUser($index)">Update</button>
+                        <button @click="deleteUser($index)">Delete</button>
                         <button @click="cancelEdit($index)">Cancel</button>
                     </p>
                 </div>
                 <div class="panel panel-default" v-else>
-                    <div class="panel-heading">{{ item.title }}</div>
-                    <div class="panel-body">{{ item.content }}</div>
+                    <div class="panel-heading">{{ user.name }}</div>
+                    <div class="panel-body">{{ user.email }}</div>
                     <hr>
                     <p>
-                        <button @click="editItem($index)">Edit</button>
+                        <button @click="editUser($index)">Edit</button>
                     </p>
                 </div>
             </div>
@@ -41,7 +41,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" @click="confirmDelItem()">Confirm</button>
+                <button type="button" class="btn btn-primary" @click="confirmDeleteUser()">Confirm</button>
               </div>
             </div>
           </div>
@@ -50,57 +50,128 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
+import API from '../routes/api';
+
+export default {
+    data() {
+        return {
+            API_TOKEN: 'fLa7BORPjFAh5oz6goij3CJm76Ond2aFhp3COEbLpBBQmAKZXl36W5wEZX3CUL3F',
+            id: 0,
+            users: [{
                 id: 0,
-                items: [{
-                    isEdit: false,
-                    title: 'Example Component',
-                    content: 'I\'m an example component!'
-                }],
-                currentIndex: -1,
-                showModal: false
+                name: 'Example Component',
+                email: 'I\'m an example component!',
+                isEdit: false
+            }],
+            currentIndex: -1,
+            showModal: false
+        }
+    },
+    methods: {
+        async addUser() {
+            let nextId = this.users[this.users.length - 1].id;
+
+            let data = {
+                name: 'user' + nextId,
+                email: 'user' + nextId + '@domain.com'
+            };
+
+            try {
+                let resp = await this.$resource(API.user, Object.assign({}, data, {
+                    password: '123456',
+                    api_token: this.API_TOKEN
+                })).save();
+
+                if (resp.json().code === 200) {
+                    console.info('created', resp.json().data);
+
+                    this.users.push(Object.assign({}, data, {
+                        id: resp.json().data.id,
+                        isEdit: false
+                    }));
+                }
+            } catch (e) {
+                console.warn(e);
             }
         },
-        ready() {
-            console.log('Component ready.')
+        editUser(index) {
+            this.currentIndex = index;
+            this.users[index].isEdit = true;
         },
-        methods: {
-            addItem() {
-                this.id++;
+        cancelEdit(index) {
+            this.currentIndex = -1;
+            this.users[index].isEdit = false;
+        },
+        async updateUser(index) {
+            let user = this.users[this.currentIndex];
 
-                // TODO: api
-                this.items.push({
-                    isEdit: false,
-                    title: 'title ' + this.id,
-                    content: 'content ' + this.id
-                });
-            },
-            editItem(index) {
-                this.currentIndex = index;
-                this.items[index].isEdit = true;
-            },
-            cancelEdit(index) {
-                this.currentIndex = -1;
-                this.items[index].isEdit = false;
-            },
-            updateItem(index) {
-                // TODO: api
-                this.items[index].isEdit = false;
-            },
-            delItem(index) {
-                $('#myModal').modal('show'); // TODO this.showModal = true
-            },
-            confirmDelItem() {
-                // TODO: api
-                this.items.splice(this.currentIndex, 1);
-                $('#myModal').modal('hide'); // TODO: this.showModal = false
-            },
-            getItems() {
-                // TODO: api
-                console.log(this.items);
+            try {
+                let resp = await this.$resource(API.user + '/' + user.id, {
+                    api_token: this.API_TOKEN,
+                    name: user.name,
+                    email: user.email
+                }).update();
+
+                if (resp.json().code === 200) {
+                    console.info('updated', resp.json().data);
+                }
+            } catch (e) {
+                console.warn(e);
+            }
+
+            this.users[index].isEdit = false;
+        },
+        deleteUser(index) {
+            $('#myModal').modal('show'); // TODO this.showModal = true
+        },
+        async confirmDeleteUser() {
+            let user = this.users[this.currentIndex];
+
+            try {
+                let resp = await this.$resource(API.user + '/' + user.id, {
+                    api_token: this.API_TOKEN,
+                    id: user.id
+                }).delete();
+
+                if (resp.json().code === 200) {
+                    console.info('deleted');
+
+                    this.users.splice(this.currentIndex, 1);
+                }
+            } catch (e) {
+                console.warn(e);
+            }
+
+            $('#myModal').modal('hide'); // TODO: this.showModal = false
+        },
+        async getUsers() {
+            try {
+                let resp = await this.$resource(API.user, {
+                    'api_token': this.API_TOKEN
+                }).query();
+
+                if (resp.json().code === 200) {
+                    console.info('getAll');
+
+                    let result = [];
+                    resp.json().data.forEach(function(value) {
+                        result.push({
+                            id: value.id,
+                            name: value.name,
+                            email: value.email,
+                            isEdit: false
+                        });
+                    });
+
+                    this.users = result;
+                }
+            } catch (e) {
+                console.warn(e);
             }
         }
+    },
+    ready() {
+        this.getUsers();
     }
+}
 </script>

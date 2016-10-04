@@ -7,6 +7,8 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use App\Helpers\Util;
+
 class RegisterController extends Controller
 {
     /*
@@ -66,6 +68,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'api_token' => Util::generateAPIToken(time()),
         ]);
     }
 }
