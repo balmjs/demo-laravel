@@ -55,7 +55,7 @@ import API from '../routes/api';
 export default {
     data() {
         return {
-            API_TOKEN: 'fLa7BORPjFAh5oz6goij3CJm76Ond2aFhp3COEbLpBBQmAKZXl36W5wEZX3CUL3F',
+            API_TOKEN: API.token, // just for test
             id: 0,
             users: [{
                 id: 0,
@@ -66,6 +66,9 @@ export default {
             currentIndex: -1,
             showModal: false
         }
+    },
+    ready() {
+        this.getUsers();
     },
     methods: {
         async addUser() {
@@ -82,11 +85,11 @@ export default {
                     api_token: this.API_TOKEN
                 })).save();
 
-                if (resp.json().code === 200) {
-                    console.info('created', resp.json().data);
+                if (resp.body.code === 200) {
+                    console.info('created', resp.body.data);
 
                     this.users.push(Object.assign({}, data, {
-                        id: resp.json().data.id,
+                        id: resp.body.data.id,
                         isEdit: false
                     }));
                 }
@@ -112,8 +115,8 @@ export default {
                     email: user.email
                 }).update();
 
-                if (resp.json().code === 200) {
-                    console.info('updated', resp.json().data);
+                if (resp.body.code === 200) {
+                    console.info('updated', resp.body.data);
                 }
             } catch (e) {
                 console.warn(e);
@@ -133,7 +136,7 @@ export default {
                     id: user.id
                 }).delete();
 
-                if (resp.json().code === 200) {
+                if (resp.body.code === 200) {
                     console.info('deleted');
 
                     this.users.splice(this.currentIndex, 1);
@@ -150,11 +153,11 @@ export default {
                     'api_token': this.API_TOKEN
                 }).query();
 
-                if (resp.json().code === 200) {
+                if (resp.body.code === 200) {
                     console.info('getAll');
 
                     let result = [];
-                    resp.json().data.forEach(function(value) {
+                    resp.body.data.forEach(function(value) {
                         result.push({
                             id: value.id,
                             name: value.name,
@@ -169,9 +172,6 @@ export default {
                 console.warn(e);
             }
         }
-    },
-    ready() {
-        this.getUsers();
     }
 }
 </script>
