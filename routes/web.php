@@ -22,3 +22,6 @@ Route::get('/demo', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/test', 'TestController@index');
+Route::post('/test', 'TestController@index');
