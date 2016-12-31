@@ -24,10 +24,13 @@ balm.config = {
     entry: {
       app: './resources/assets/js/app.js',
     },
-    loaders: [{ // for Vue.js
+    loaders: [{
       test: /\.vue$/,
       loader: 'vue'
-    }]
+    }],
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
   }
   //, cache: true,
   // assets: {

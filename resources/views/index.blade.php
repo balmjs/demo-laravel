@@ -12,7 +12,9 @@
     </script>
   </head>
   <body>
-    <example></example>
+    <div id="app">
+      <example></example>
+    </div>
     <script src="{{ balm('js/app.js') }}"></script>
   </body>
 </html>

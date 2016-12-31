@@ -15,7 +15,7 @@ class Controller extends BaseController
     {
         $output = [
           'code' => $code,
-          'message' => $message,
+          'msg' => $message,
           'data' => $data,
         ];
 
