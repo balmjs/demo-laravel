@@ -32,9 +32,10 @@ balm.config = {
       vue: 'vue/dist/vue.js'
     }
   }
-  //, cache: true,
+  // ,
+  // cache: true,
   // assets: {
-  //  subDir: 'assets'
+  //   subDir: 'assets'
   // }
 };
 
