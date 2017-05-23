@@ -15,10 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// MPA
+Route::get('/home', function () {
+    return view('mpa/home');
+});
 
-Route::get('/home', 'HomeController@index');
+Route::get('/about', function () {
+    return view('mpa/about');
+});
 
+Route::get('/contact', function () {
+    return view('mpa/contact');
+});
+
+// SPA
 Route::get('/demo', function () {
-    return view('index');
+    return view('spa/index');
 });

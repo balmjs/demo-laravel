@@ -22,7 +22,10 @@ balm.config = {
   },
   scripts: {
     entry: {
-      app: './resources/assets/js/app.js',
+      home: './resources/assets/js/home.js',
+      about: './resources/assets/js/about.js',
+      contact: './resources/assets/js/contact.js',
+      app: './resources/assets/js/app.js'
     },
     loaders: [{
       test: /\.vue$/,
@@ -31,15 +34,14 @@ balm.config = {
     alias: {
       vue: 'vue/dist/vue.js'
     }
-  }
-  // ,
+  },
   // cache: true,
   // assets: {
   //   subDir: 'assets'
   // }
 };
 
-balm.go(mix => {
+balm.go(function(mix) {
   if (balm.config.production && balm.config.cache) {
     mix.remove('./public/css');
   }
