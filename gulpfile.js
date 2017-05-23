@@ -29,17 +29,16 @@ balm.config = {
       loader: 'vue'
     }],
     alias: {
-      vue: 'vue/dist/vue.js'
+      vue: balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
     }
-  }
-  // ,
+  },
   // cache: true,
   // assets: {
   //   subDir: 'assets'
   // }
 };
 
-balm.go(mix => {
+balm.go(function(mix) {
   if (balm.config.production && balm.config.cache) {
     mix.remove('./public/css');
   }

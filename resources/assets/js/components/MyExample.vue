@@ -50,9 +50,11 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import API from '../config/api';
 
-const API_TOKEN = API.token; // just for test
+// just for local test
+Vue.http.headers.common['Authorization'] = `Bearer ${API.token}`;
 
 export default {
   data() {
@@ -78,8 +80,7 @@ export default {
       let postData = {
         name: 'user' + nextId,
         email: 'user' + nextId + '@domain.com',
-        password: '123456',
-        api_token: API_TOKEN
+        password: '123456'
       };
 
       try {
@@ -113,7 +114,6 @@ export default {
       let user = this.users[this.currentIndex];
 
       let postData = {
-        api_token: API_TOKEN,
         name: user.name,
         email: user.email
       };
@@ -141,7 +141,6 @@ export default {
       let user = this.users[this.currentIndex];
 
       let postData = {
-        api_token: API_TOKEN,
         id: user.id
       };
 
@@ -165,9 +164,7 @@ export default {
     },
     async getUsers() {
       try {
-        let response = await this.$resource(API.user).get({
-          api_token: API_TOKEN
-        });
+        let response = await this.$resource(API.user).get();
 
         let {code, msg, data} = response.body;
 
