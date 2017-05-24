@@ -6,7 +6,7 @@ class Util
 {
     public static function generateAPIToken($uuid)
     {
-        $salt = 'someString';
+        $salt = 'someKey';
         $token = md5($uuid.$salt);
 
         return $token;

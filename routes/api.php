@@ -20,3 +20,8 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => 'auth:api'], function () {
     Route::resource('user', 'UserController');
 });
+
+Route::group([], function () {
+  Route::post('auth/register', 'AuthController@register');
+  Route::post('auth/login', 'AuthController@login');
+});
