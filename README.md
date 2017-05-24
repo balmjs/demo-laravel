@@ -10,7 +10,11 @@ php artisan migrate
 php artisan key:generate
 
 php artisan jwt:secret
+```
 
+- edit _gulpfile.js_, set `balm.config.server.proxy = 'your virtual host'`
+
+```sh
 # 安装
 npm install
 # or
