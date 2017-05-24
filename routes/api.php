@@ -20,6 +20,7 @@ use Illuminate\Routing\Router;
 
 Route::group([], function (Router $api) {
 
+  $api->post('auth/register', 'AuthController@register');
   $api->post('auth/login', 'AuthController@login');
 
   $api->group(['middleware' => 'jwt.auth'], function (Router $api) {

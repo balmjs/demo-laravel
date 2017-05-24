@@ -6,9 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use App\User;
 
 class AuthController extends ApiController
 {
+    public function register(Request $request)
+    {
+        if (!empty($request->name) && !empty($request->email)) {
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            // TODO: no validator
+            if ($user->save()) {
+                return $this->success($user);
+            } else {
+                return $this->error('register_failure');
+            }
+        } else {
+            return $this->error('invalid_request');
+        }
+    }
+
     public function login(Request $request)
     {
         // grab credentials from the request

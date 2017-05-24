@@ -3,9 +3,13 @@
 ```sh
 ## 准备
 composer install
+
 cp .env.example .env (edit .env for your db)
+
+php artisan migrate
 php artisan key:generate
-php artisan jwt:generate
+
+php artisan jwt:secret
 
 # 安装
 npm install
