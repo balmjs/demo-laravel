@@ -3,7 +3,7 @@ let balm = require('balm');
 balm.config = {
   static: false, // for PHP framework
   server: {
-    proxy: 'your.project.dev'
+    proxy: 'your.project.local'
   },
   roots: {
     source: 'resources',
@@ -32,14 +32,18 @@ balm.config = {
       vue: balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
     }
   },
-  // cache: true,
   // assets: {
   //   subDir: 'assets'
-  // }
+  // },
+  // cache: true
 };
 
 balm.go(function(mix) {
-  if (balm.config.production && balm.config.cache) {
-    mix.remove('./public/css');
+  if (balm.config.production) {
+    if (balm.config.cache) {
+      mix.remove('./public/css');
+    } else {
+      mix.remove('./public/assets');
+    }
   }
 });
