@@ -57,7 +57,7 @@ balm.config = {
 
 ## Enjoy
 
-# For development
+For development
 
 ```sh
 npm run dev
@@ -65,7 +65,7 @@ npm run dev
 
 > Visit `http://localhost:3000/demo`
 
-# For production
+For production
 
 ```sh
 npm run prod
