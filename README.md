@@ -57,12 +57,18 @@ balm.config = {
 
 ## Enjoy
 
-```sh
-# 开发
-npm run dev
+# For development
 
-# 打包
-npm run prod
+```sh
+npm run dev
 ```
 
 > Visit `http://localhost:3000/demo`
+
+# For production
+
+```sh
+npm run prod
+```
+
+> Visit `http://your.project.local/demo`
