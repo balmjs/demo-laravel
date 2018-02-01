@@ -14,21 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-// MPA
-Route::get('/home', function () {
-    return view('mpa/home');
-});
-
-Route::get('/about', function () {
-    return view('mpa/about');
-});
-
-Route::get('/contact', function () {
-    return view('mpa/contact');
-});
-
-// SPA
-Route::get('/demo', function () {
-    return view('spa/index');
-});
