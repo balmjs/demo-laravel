@@ -3,7 +3,7 @@ let balm = require('balm');
 balm.config = {
   static: false, // for PHP framework
   server: {
-    proxy: 'your.project.dev'
+    proxy: 'your.project.local'
   },
   roots: {
     source: 'resources',
@@ -32,13 +32,13 @@ balm.config = {
       loader: 'vue'
     }],
     alias: {
-      vue: balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+      'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js'
     }
   },
-  // cache: true,
   // assets: {
   //   subDir: 'assets'
-  // }
+  // },
+  // cache: true
 };
 
 balm.go(function(mix) {
