@@ -39,17 +39,20 @@ class UserController extends ApiController
      */
     public function store(Request $request)
     {
-        // Validate the request...
-
-        $user = new User;
-
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-
-        $user->save();
-
-        return $this->success($user);
+        if (!empty($request->name) && !empty($request->email)) {
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            // TODO: Not verified
+            if ($user->save()) {
+                return $this->success($user);
+            } else {
+                return $this->error('register_failure');
+            }
+        } else {
+            return $this->error('invalid_request');
+        }
     }
 
     /**

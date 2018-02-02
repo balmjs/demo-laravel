@@ -54,9 +54,9 @@ export default {
   },
   methods: {
     async submit() {
-      let { data } = await API.login(this.formData);
+      let { status, data } = await API.login(this.formData);
 
-      if (data.access_token) {
+      if (status) {
         store.save(data);
         this.$router.push('/');
       }
