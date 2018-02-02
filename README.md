@@ -66,7 +66,7 @@ For development
 npm run dev
 ```
 
-> Visit `http://localhost:3000/demo`
+> Visit `http://localhost:3000`
 
 For production
 
@@ -74,4 +74,4 @@ For production
 npm run prod
 ```
 
-> Visit `http://your.project.local/demo`
+> Visit `http://your.project.local`
