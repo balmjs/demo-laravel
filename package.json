@@ -4,8 +4,8 @@
   "description": "The balm demo for laravel project",
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp"
+    "dev": "gulp --silent",
+    "prod": "gulp --silent --production"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
     "bootstrap-sass": "^3.3.7",
     "jquery": "^3.2",
     "lodash": "^4.17.4",
-    "vue": "^2.5.7"
+    "vue": "^2.5.7",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",

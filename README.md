@@ -1,30 +1,77 @@
-## Balm Demo（Laravel版）
+# Balm Demo（Laravel版）
+
+## For Back-end
+
+### 1. Installing Laravel
 
 ```sh
-## 准备
 composer install
+```
 
-cp .env.example .env (edit .env for your db)
+### 2. Configuration
 
-php artisan migrate
+```sh
+cp .env.example .env
+
+# Set your application key
 php artisan key:generate
 
+# Generate secret key for jwt-auth
 php artisan jwt:secret
 ```
 
-- edit _gulpfile.js_, set `balm.config.server.proxy = 'your virtual host'`
+- Edit `.env` for your DB
+
+```
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+
+- Import database structure
 
 ```sh
-# 安装
+php artisan migrate
+```
+
+## For Front-end
+
+### 1. Installing Balm
+
+```sh
 npm install
-# or
-yarn install
 
-# 开发
+# OR
+yarn
+```
+
+### 2. Config Balm
+
+- Edit `gulpfile.js`
+
+```js
+balm.config = {
+  server: {
+    proxy: 'your.project.local' // Virtual host
+  },
+  ...
+};
+```
+
+## Enjoy
+
+For development
+
+```sh
 npm run dev
+```
 
-# 打包
+> Visit `http://localhost:3000/demo`
+
+For production
+
+```sh
 npm run prod
 ```
 
-__enjoy it__
+> Visit `http://your.project.local/demo`
