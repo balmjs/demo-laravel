@@ -61,10 +61,19 @@ export default {
     };
   },
   methods: {
+    resetFormData() {
+      this.formData = {
+        name: '',
+        email: '',
+        password: ''
+      };
+    },
     async submit() {
-      let { status } = await API.register(this.formData);
+      let { status, message } = await API.register(this.formData);
 
       if (status) {
+        this.resetFormData();
+        alert(message);
         this.$router.push('/login');
       }
     }

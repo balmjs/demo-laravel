@@ -19,16 +19,20 @@ use Illuminate\Routing\Router;
 // });
 
 Route::group([
-
-    'middleware' => 'api',
-    'prefix' => 'auth'
-
+    'namespace' => 'Api',
+    'middleware' => 'api'
 ], function ($router) {
+  // Auth
+  Route::group(['prefix' => 'auth'], function ($router) {
+      Route::post('register', 'AuthController@register');
+      Route::post('login', 'AuthController@login');
+      Route::post('logout', 'AuthController@logout');
+      Route::post('refresh', 'AuthController@refresh');
+      Route::post('me', 'AuthController@me');
+  });
 
-    Route::post('register', 'AuthController@register');
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
-
+  // User restful
+  Route::resource('user', 'UserController', ['only' => [
+    'index', 'store', 'update', 'destroy'
+  ]]);
 });

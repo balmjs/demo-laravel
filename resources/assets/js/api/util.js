@@ -2,14 +2,12 @@ const $http = window.axios;
 
 const callback = ({ status, message, data }) => {
   let result = {
-    success: false,
+    status,
     message,
     data
   };
 
-  if (status) {
-    result.success = true;
-  } else {
+  if (!status) {
     window.alert(message);
   }
 

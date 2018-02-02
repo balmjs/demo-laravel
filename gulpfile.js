@@ -22,14 +22,14 @@ balm.config = {
   },
   scripts: {
     entry: {
-      home: './resources/assets/js/home.js',
-      about: './resources/assets/js/about.js',
-      contact: './resources/assets/js/contact.js',
       app: './resources/assets/js/app.js'
     },
     loaders: [{
       test: /\.vue$/,
-      loader: 'vue'
+      loader: 'vue',
+      options: {
+        esModule: false // For `const MyComponent = () => import('./components/my-component');`
+      }
     }],
     alias: {
       'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js'

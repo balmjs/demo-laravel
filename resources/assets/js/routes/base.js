@@ -1,7 +1,7 @@
-const Home = () => import('../views/home');
-const Login = () => import('../views/login');
-const Register = () => import('../views/register');
-const NotFound = () => import('../views/not-found');
+import Home from '../views/home';
+import Login from '../views/login';
+import Register from '../views/register';
+import NotFound from '../views/not-found';
 
 let baseRoutes = [{
   path: '/home',
