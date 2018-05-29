@@ -18,7 +18,7 @@
               <template v-else>
                 {{ user.name }}
                 <button type="button" @click="edit(user, index)">Edit</button>
-                <button type="button" @click="remove(user.id, index)">Delete</button>
+                <button v-if="user.id > 1" type="button" @click="remove(user.id, index)">Delete</button>
               </template>
             </template>
             <template v-else>

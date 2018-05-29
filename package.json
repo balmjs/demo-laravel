@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "dependencies": {
-    "axios": "^0.17",
+    "axios": "^0.18",
     "bootstrap-sass": "^3.3.7",
     "jquery": "^3.2",
     "lodash": "^4.17.4",
@@ -28,9 +28,9 @@
   },
   "devDependencies": {
     "babel-preset-stage-2": "^6.24.1",
-    "balm": "^0.16.1",
+    "balm": "^0.22.0",
     "gulp": "^3.9.1",
-    "vue-loader": "^13.0.0",
+    "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.7"
   }
 }
