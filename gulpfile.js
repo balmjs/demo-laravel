@@ -1,4 +1,5 @@
-let balm = require('balm');
+const balm = require('balm');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 balm.config = {
   static: false, // for PHP framework
@@ -30,6 +31,7 @@ balm.config = {
         loader: 'vue-loader'
       }
     ],
+    plugins: [new VueLoaderPlugin()],
     alias: {
       vue$: 'vue/dist/vue.esm.js'
     }
@@ -40,7 +42,7 @@ balm.config = {
   // cache: true
 };
 
-balm.go(function(mix) {
+balm.go(mix => {
   if (balm.config.production && balm.config.cache) {
     mix.remove('./public/css');
   }
