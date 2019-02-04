@@ -43,7 +43,7 @@ balm.config = {
 };
 
 balm.go(mix => {
-  if (balm.config.production && balm.config.cache) {
+  if (balm.config.isProd && balm.config.cache) {
     mix.remove('./public/css');
   }
 });
