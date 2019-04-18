@@ -35,4 +35,22 @@ Route::group([
   Route::resource('user', 'UserController', ['only' => [
     'index', 'store', 'update', 'destroy'
   ]]);
+
+
+  // Test
+  // Route::post('test', ['middleware' => 'cors', function () {
+  // 	return 'gg';
+  // }]);
+
+  // OR
+  Route::post('test', function () {
+     return 'gg';
+  })->middleware('cors');
+
+  // OR
+  // Route::post(['middleware' => 'cors'], function () {
+  //   Route::get('test', function () {
+  //     return 'gg';
+  //   });
+  // });
 });
