@@ -13,9 +13,9 @@ return [
     */
    
     'supportsCredentials' => false,
-    'allowedOrigins' => ['http://localhost:3000'], // ex: ['abc.com', 'api.abc.com']
+    'allowedOrigins' => ['*'], // ex: ['abc.com', 'api.abc.com']
     'allowedOriginsPatterns' => [],
-    'allowedHeaders' => ['Content-Type', 'X-Requested-With'],
+    'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'], // ex: ['GET', 'POST', 'PUT', 'DELETE']
     'exposedHeaders' => [],
     'maxAge' => 0,
