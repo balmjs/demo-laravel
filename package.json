@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "dependencies": {
-    "axios": "^0.18",
-    "bootstrap-sass": "^3.3.7",
-    "jquery": "^3.2",
-    "lodash": "^4.17.4",
-    "vue": "^2.5.22",
-    "vue-router": "^3.0.2"
+    "axios": "^0.19.0",
+    "bootstrap-sass": "^3.4.1",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.11",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -37,9 +37,9 @@
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "balm": "^1.0.0",
-    "gulp": "^4.0.0",
-    "vue-loader": "^15.6.2",
-    "vue-template-compiler": "^2.5.22"
+    "balm": "^1.5.2",
+    "gulp": "^4.0.2",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }

@@ -1,4 +1,4 @@
-# Balm Demo（Laravel版）
+# Balm Demo（Laravel 版）
 
 ## For Back-end
 
@@ -22,7 +22,7 @@ php artisan jwt:secret
 
 - Edit `.env` for your DB
 
-```
+```md
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret

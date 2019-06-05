@@ -35,15 +35,11 @@ balm.config = {
     alias: {
       vue$: 'vue/dist/vue.esm.js'
     }
-  }
+  },
   // assets: {
-  //   subDir: 'assets'
+  //   subDir: 'web'
   // },
-  // cache: true
+  cache: true
 };
 
-balm.go(mix => {
-  if (balm.config.isProd && balm.config.cache) {
-    mix.remove('./public/css');
-  }
-});
+balm.go();
