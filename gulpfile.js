@@ -3,7 +3,8 @@ const balm = require('balm');
 balm.config = {
     inFrontend: false, // for PHP framework
     server: {
-        proxy: 'your.project.local'
+        proxy: 'your.project.local',
+        extraWatchFiles: ['resources/views/**/*.php']
     },
     roots: {
         source: 'resources',
@@ -19,7 +20,7 @@ balm.config = {
         extname: 'scss'
     },
     scripts: {
-        entry: './resources/assets/js/app.js'
+        entry: './resources/js/app.js'
     },
     assets: {
         // subDir: 'web',

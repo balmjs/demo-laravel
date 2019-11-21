@@ -15,12 +15,9 @@ cp .env.example .env
 
 # Set your application key
 php artisan key:generate
-
-# Generate secret key for jwt-auth
-php artisan jwt:secret
 ```
 
-- Edit `.env` for your DB
+-   Edit `.env` for your DB
 
 ```md
 DB_DATABASE=homestead
@@ -28,7 +25,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-- Import database structure
+-   Import database structure
 
 ```sh
 php artisan migrate
@@ -46,14 +43,14 @@ npm install
 
 ### 2. Config Balm
 
-- Edit `gulpfile.js`
+-   Edit `gulpfile.js`
 
 ```js
 balm.config = {
-  server: {
-    proxy: 'your.project.local' // Virtual host
-  }
-  // ...
+    server: {
+        proxy: 'your.project.local' // Virtual host
+    }
+    // ...
 };
 ```
 
