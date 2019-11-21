@@ -1,4 +1,4 @@
-# Balm Demo（Laravel 版）
+# BalmJS demo - Laravel
 
 ## For Back-end
 
@@ -39,10 +39,9 @@ php artisan migrate
 ### 1. Installing Balm
 
 ```sh
-npm install
-
+yarn install
 # OR
-yarn
+npm install
 ```
 
 ### 2. Config Balm
@@ -53,8 +52,8 @@ yarn
 balm.config = {
   server: {
     proxy: 'your.project.local' // Virtual host
-  },
-  ...
+  }
+  // ...
 };
 ```
 
@@ -63,6 +62,8 @@ balm.config = {
 For development
 
 ```sh
+yarn run dev
+# OR
 npm run dev
 ```
 
@@ -71,6 +72,8 @@ npm run dev
 For production
 
 ```sh
+yarn run prod
+# OR
 npm run prod
 ```
 
