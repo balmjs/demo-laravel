@@ -1,29 +1,30 @@
 {
-    "name": "balm-demo-laravel",
-    "version": "2.0.0",
-    "description": "The balm demo for laravel project",
-    "private": true,
-    "scripts": {
-        "dev": "gulp --silent",
-        "prod": "gulp --silent --production"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/balmjs/balm-laravel.git"
-    },
-    "keywords": [],
-    "author": "Elf-mousE",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/balmjs/balm-laravel/issues"
-    },
-    "homepage": "https://github.com/balmjs/balm-laravel#readme",
-    "dependencies": {
-        "axios": "^0.19",
-        "lodash": "^4.17.13"
-    },
-    "devDependencies": {
-        "balm": "^2.0.2",
-        "gulp": "^4.0.2"
-    }
+  "name": "balm-demo-laravel",
+  "version": "2.0.0",
+  "description": "The balm demo for laravel project",
+  "private": true,
+  "scripts": {
+    "dev": "gulp --silent",
+    "prod": "gulp --silent -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balmjs/balm-laravel.git"
+  },
+  "keywords": [],
+  "author": "Elf-mousE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balmjs/balm-laravel/issues"
+  },
+  "homepage": "https://github.com/balmjs/balm-laravel#readme",
+  "dependencies": {
+    "axios": "^0.19",
+    "lodash": "^4.17.13"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "balm": "^2.0.3",
+    "gulp": "^4.0.2"
+  }
 }

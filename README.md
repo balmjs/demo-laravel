@@ -17,7 +17,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
--   Edit `.env` for your DB
+- Edit `.env` for your DB
 
 ```md
 DB_DATABASE=homestead
@@ -25,7 +25,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
--   Import database structure
+- Import database structure
 
 ```sh
 php artisan migrate
@@ -43,14 +43,14 @@ npm install
 
 ### 2. Config Balm
 
--   Edit `gulpfile.js`
+- Edit `gulpfile.js`
 
 ```js
 balm.config = {
-    server: {
-        proxy: 'your.project.local' // Virtual host
-    }
-    // ...
+  server: {
+    proxy: 'your.project.local' // Virtual host
+  }
+  // ...
 };
 ```
 
