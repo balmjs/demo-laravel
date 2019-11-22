@@ -54,7 +54,7 @@ balm.config = {
 };
 ```
 
-## Enjoy
+## :ghost: Enjoy
 
 For development
 
