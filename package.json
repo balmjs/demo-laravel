@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "dependencies": {
-    "axios": "^0.19",
-    "lodash": "^4.17.13"
+    "axios": "^0.19.2",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "balm": "^2.0.3",
+    "babel-eslint": "^10.1.0",
+    "balm": "^2.11.0",
     "gulp": "^4.0.2"
   }
 }
