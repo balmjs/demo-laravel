@@ -20,7 +20,7 @@
   "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
