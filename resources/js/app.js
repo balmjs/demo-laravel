@@ -4,9 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
+import '@/bootstrap';
 import Vue from 'vue';
-import ExampleComponent from './components/ExampleComponent';
+import ExampleComponent from '@/components/ExampleComponent';
 
 Vue.config.productionTip = false;
 
