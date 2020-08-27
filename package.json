@@ -1,30 +1,22 @@
 {
-  "name": "balm-demo-laravel",
-  "version": "2.0.0",
-  "description": "The balm demo for laravel project",
   "private": true,
   "scripts": {
-    "dev": "gulp --silent",
-    "prod": "gulp --silent -p"
+    "dev": "balm",
+    "prod": "balm -p"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/balmjs/balm-laravel.git"
-  },
-  "keywords": [],
-  "author": "Elf-mousE",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/balmjs/balm-laravel/issues"
-  },
-  "homepage": "https://github.com/balmjs/balm-laravel#readme",
   "dependencies": {
-    "axios": "^0.19.2",
-    "lodash": "^4.17.15"
+    "axios": "^0.20",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.2",
+    "lodash": "^4.17.20",
+    "popper.js": "^1.12",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "balm": "^2.11.0",
-    "gulp": "^4.0.2"
+    "balm": "^3.0.0-rc.2",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1"
   }
 }
