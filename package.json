@@ -5,7 +5,7 @@
     "prod": "balm -p"
   },
   "dependencies": {
-    "axios": "^0.20",
+    "axios": "^0.21",
     "bootstrap": "^4.0.0",
     "jquery": "^3.2",
     "lodash": "^4.17.20",
